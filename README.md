@@ -3,7 +3,7 @@
 The Building Product Ontology defines concepts to describe (building) products in a schematic way. It provides methods to describe assembly structures and component interconnections, and attach properties to any component without restricting their types, as is often the case in template-driven product descriptions. To allow the description of complex properties, it also contains terms for unordered, two-dimensional lists.
 
 ## HTML documentation
-* Namespace (base-URI): http://www.w3id.org/bpo#
+* Namespace (base-URI): [http://www.w3id.org/bpo#](http://www.w3id.org/bpo#)
 * Suggested prefix: bpo
 
 ## Introduction to BPO 
@@ -19,10 +19,10 @@ An [online sparql-visualizer demo](https://madsholten.github.io/sparql-visualize
 
 ## Authors and contributors
 Authors:
-[Anna Wagner](https://www.researchgate.net/profile/Anna_Wagner13) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
-[Laura Kristina Möller](https://www.iib.tu-darmstadt.de/mitarbeiter_iib/ehemalige_iib/moeller.en.jsp) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
-[Christian Leifgen](https://christian.leifgen.eu/) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
-[Christian Eller](https://www.iib.tu-darmstadt.de/mitarbeiter_iib/eller.en.jsp) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
+* [Anna Wagner](https://www.researchgate.net/profile/Anna_Wagner13) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
+* [Laura Kristina Möller](https://www.iib.tu-darmstadt.de/mitarbeiter_iib/ehemalige_iib/moeller.en.jsp) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
+* [Christian Leifgen](https://christian.leifgen.eu/) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
+* [Christian Eller](https://www.iib.tu-darmstadt.de/mitarbeiter_iib/eller.en.jsp) - [iib, TU Darmstadt](https://www.iib.tu-darmstadt.de/willkommen/index.en.jsp)
 
 Contributors:
 * [Johannes Eisenlohr](https://www.researchgate.net/profile/Johannes_Eisenlohr) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
