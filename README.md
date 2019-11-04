@@ -1,4 +1,4 @@
-# The Ontology for Managing Geometry (OMG)
+# The Building Product Ontology (BPO)
 
 The Building Product Ontology defines concepts to describe (building) products in a schematic way. It provides methods to describe assembly structures and component interconnections, and attach properties to any component without restricting their types, as is often the case in template-driven product descriptions. To allow the description of complex properties, it also contains terms for unordered, two-dimensional lists.
 

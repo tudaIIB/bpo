@@ -3,7 +3,6 @@
 
 @prefix bpo: <https://w3id.org/bpo#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gr: <http://purl.org/goodrelations/v1#> .
@@ -20,66 +19,40 @@
 
 <https://w3id.org/bpo>
   rdf:type owl:Ontology ;
-  dcterms:contributor [
-      rdf:type foaf:Person ;
-      foaf:name "Christoph Maurer" ;
-    ] ;
-  dcterms:contributor [
-      rdf:type foaf:Person ;
-      foaf:name "Gesa Benndorf" ;
-    ] ;
-  dcterms:contributor [
-      rdf:type foaf:Person ;
-      foaf:name "Johannes Eisenlohr" ;
-    ] ;
-  dcterms:contributor [
-      rdf:type foaf:Person ;
-      foaf:name "Marouane Boudhaim" ;
-    ] ;
+  dcterms:contributor <https://www.ise.fraunhofer.de/en/about-us/staff-profiles/benndorf-gesa.html> ;
+  dcterms:contributor <https://www.linkedin.com/in/christophmaurercleanenergy> ;
+  dcterms:contributor <https://www.researchgate.net/profile/Johannes_Eisenlohr> ;
+  dcterms:contributor <https://www.researchgate.net/profile/Tim_Rist> ;
   dcterms:contributor [
       rdf:type foaf:Person ;
       foaf:name "Tillmann E. Kuhn" ;
     ] ;
   dcterms:contributor [
       rdf:type foaf:Person ;
-      foaf:name "Tim Rist" ;
-    ] ;
-  dcterms:contributor [
-      rdf:type foaf:Person ;
       foaf:name "Wendelin Sprenger" ;
     ] ;
-  dcterms:creator [
-      rdf:type foaf:Person ;
-      foaf:name "Anna Wagner" ;
-    ] ;
-  dcterms:creator [
-      rdf:type foaf:Person ;
-      foaf:name "Christian Eller" ;
-    ] ;
-  dcterms:creator [
-      rdf:type foaf:Person ;
-      foaf:name "Christian Leifgen" ;
-    ] ;
-  dcterms:creator [
-      rdf:type foaf:Person ;
-      foaf:name "Laura Kristina Moeller" ;
-    ] ;
+  dcterms:creator <https://christian.leifgen.eu/> ;
+  dcterms:creator <https://www.iib.tu-darmstadt.de/mitarbeiter_iib/ehemalige_iib/moeller.en.jsp> ;
+  dcterms:creator <https://www.iib.tu-darmstadt.de/mitarbeiter_iib/eller.en.jsp> ;
+  dcterms:creator <https://www.researchgate.net/profile/Anna_Wagner13> ;
   dcterms:description """The Building Product Ontology defines concepts to describe (building) products in a schematic way. It provides methods to describe assembly structures and attach properties to any component without restricting their types, as is often the case in template-driven product descriptions. To allow the description of complex properties, it also contains terms for unordered, two-dimensional lists.
 
 The BPO's bpo is on the schematic description of product only, not including geometry or material compositions. Therefore, it can be used to describe theoretical product components without geometric representations as well as those with geometric representations without restrictions. For classification purposes, it uses the buildingSMART Data Dictionary (bSDD) by referencing to the terms' bSDD GUID. If geometric descriptions are desired for components, the authors suggest to use the Ontology for Managing Geometry (OMG, https://w3id.org/omg) resp. the File Ontology for Geometry formats (FOG, https://w3id.org/omg).
+
+The initial version of the BPO is presented in:
+Wagner, A., & Rüppel, U. (2019). BPO: The Building Product Ontology for Assembled Products. In Proceedings of the 7th Linked Data in Architecture and Construction workshop (LDAC 2019) (Vol. 7, p. 12), CEUR: http://ceur-ws.org/Vol-2389/08paper.pdf.
 
 The BPO is based on the SolConPro ontology, which was first presented in:
 Wagner, A., Moeller, L.K., Leifgen, C., Rueppel, U., (2018). SolConPro: Describing multi-functional building products using semantic web technologies. In: European Conference on Product and Process Modelling, 12-14 September 2018, Copenhagen, Denmark. In: 12 . CRC Press 
 
 This work is part of the research project Semantic Construction Project Engineering (www.projekt-bpo.de), founded by the German Federal Ministry for Economic Affairs and Energy (BMWi)."""@en ;
   dcterms:issued "2019-03-02"^^xsd:date ;
-  dcterms:license <https://creativecommons.org/licenses/by/1.0/> ;
-  dcterms:modified "2019-11-04"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dcterms:modified "2019-07-08"^^xsd:date ;
   dcterms:title "Building Product Ontology"@en ;
   vann:preferredNamespacePrefix "bpo" ;
   vann:preferredNamespaceUri bpo: ;
-  owl:priorVersion <https://w3id.org/archive/bpo_V1-1> ;
-  owl:versionInfo "1.2" ;
+  owl:versionInfo "1.1" ;
 .
 bpo:Assembly
   rdf:type owl:Class ;
@@ -133,7 +106,7 @@ bpo:ClassifiedObject
 .
 bpo:Component
   rdf:type owl:Class ;
-  rdfs:comment """A component represents the description of an object that is part of a product assembly or the product itself. Whenever such an object is modelled, it should ideally be given one of the subclasses of scp:Component to further specialise the object's characteristics. This class is to be understood as an abstract superclass with the purpose of grouping all product assembly relevant classes. 
+  rdfs:comment """A component represents the description of an object that is part of a product assembly or the product itself. Whenever such an object is modelled, it should ideally be given one of the subclasses of bpo:Component to further specialise the object's characteristics. This class is to be understood as an abstract superclass with the purpose of grouping all product assembly relevant classes. 
 All components may, but do not need to, hold additional information regarding their geometry and material composition."""@en ;
   rdfs:label "component"@en ;
   rdfs:subClassOf bpo:ClassifiedObject ;
@@ -188,19 +161,24 @@ bpo:Entry2D
   rdfs:label "2D entry"@en ;
   rdfs:subClassOf schema:StructuredValue ;
   rdfs:subClassOf [
-      rdf:type owl:Class ;
-      owl:intersectionOf (
-          [
-            rdf:type owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty bpo:hasValue1 ;
-          ]
-          [
-            rdf:type owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty bpo:hasValue2 ;
-          ]
-        ) ;
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:describesAttributeFirstValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:describesAttributeSecondValue ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:hasValue1 ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:hasValue2 ;
     ] ;
   owl:disjointWith bpo:Interval ;
   owl:disjointWith bpo:List2D ;
@@ -224,31 +202,26 @@ bpo:List2D
   rdfs:label "2D list"@en ;
   rdfs:subClassOf schema:StructuredValue ;
   rdfs:subClassOf [
-      rdf:type owl:Class ;
-      owl:intersectionOf (
-          [
-            rdf:type owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty bpo:describesAttributeInFirstColumn ;
-          ]
-          [
-            rdf:type owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty bpo:describesAttributeInSecondColumn ;
-          ]
-          [
-            rdf:type owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty bpo:hasEntry ;
-          ]
-        ) ;
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:describesAttributeInFirstColumn ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:describesAttributeInSecondColumn ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty bpo:hasEntry ;
     ] ;
   owl:disjointWith bpo:Entry2D ;
   owl:disjointWith bpo:Interval ;
 .
 bpo:Product
   rdf:type owl:Class ;
-  rdfs:comment "A product is a description of any item that can be or is offered for sale by vendors or manufacturers. Products can be assembled or modelled as an element. In any case, the product's structure should be clarified by giving the individual the according type (scp:Assembly or scp:Element) as well."@en ;
+  rdfs:comment "A product is a description of any item that can be or is offered for sale by vendors or manufacturers. Products can be assembled or modelled as an element. In any case, the product's structure should be clarified by giving the individual the according type (bpo:Assembly or bpo:Element) as well."@en ;
   rdfs:label "product"@en ;
   rdfs:subClassOf gr:ProductOrServiceModel ;
   rdfs:subClassOf schema:ProductModel ;
@@ -312,7 +285,7 @@ bpo:connectsInputOf
 bpo:consistsOf
   rdf:type owl:ObjectProperty ;
   rdf:type owl:TransitiveProperty ;
-  rdfs:comment """Object property to describe an assembly relation between components. Since an assembly can also contain of other assemblies, the range of this property is defined as component, the superclass of both assemblies and elements in this ontology. It can also be inferred by a chain axiom stating that an assembly consists of any component that is realised by an entity that is connected to the considered assembly ([scp:hasObjectWith,scp:realisesObject]).
+  rdfs:comment """Object property to describe an assembly relation between components. Since an assembly can also contain of other assemblies, the range of this property is defined as component, the superclass of both assemblies and elements in this ontology. It can also be inferred by a chain axiom stating that an assembly consists of any component that is realised by an entity that is connected to the considered assembly ([bpo:isComposedOfEntity,bpo:realisesObject]).
 Also, this property is transitive, allowing to easily identify every component that is part of a considered assembly."""@en ;
   rdfs:domain bpo:Assembly ;
   rdfs:label "consits of"@en ;
