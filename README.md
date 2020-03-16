@@ -30,7 +30,7 @@ Contributors:
 * [Gesa Benndorf](https://www.ise.fraunhofer.de/en/about-us/staff-profiles/benndorf-gesa.html) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
 * Wendelin Sprenger - Ed. Züblin AG
 * [Christoph Maurer](https://www.linkedin.com/in/christophmaurercleanenergy) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
-* Tillmann E. Kuhn - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
+* Tilmann E. Kuhn - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
 
 ## References
 Please cite the following paper when using BPO:
