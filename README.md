@@ -28,7 +28,7 @@ Contributors:
 * [Johannes Eisenlohr](https://www.researchgate.net/profile/Johannes_Eisenlohr) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
 * [Tim Rist](https://www.researchgate.net/profile/Tim_Rist) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
 * [Gesa Benndorf](https://www.ise.fraunhofer.de/en/about-us/staff-profiles/benndorf-gesa.html) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
-* Wendelin Sprenger - Ed. Züblin AG
+* [Wendelin Sprenger](https://www.researchgate.net/profile/Wendelin_Sprenger) - [Ed. Züblin AG](https://www.zueblin.de/)
 * [Christoph Maurer](https://www.linkedin.com/in/christophmaurercleanenergy) - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
 * Tilmann E. Kuhn - [Fraunhofer ISE](https://www.ise.fraunhofer.de/)
 
